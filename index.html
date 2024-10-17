@@ -23,7 +23,7 @@
             <figure class="header-logotipo">
                 <img src="img/logotipo.png" alt="logotipo" width="100px" style="margin-top:5px;">
                 <div class="modalLogin">
-                    <a id="btnInicioSesion" class="inicioSesion">Iniciar Sesión</a>
+                    <a id="btnInicioSesion" class="inicioSesion" href="#">Iniciar Sesión</a>
                 </div>
             </figure>
             
@@ -42,7 +42,7 @@
     <!-- Contenedor principal para centrar el contenido -->
     <div class="main-content">
         <!--Login-->
-        <div id="modalRegister" class="glass-container">
+        <div id="modalRegister" class="glass-container" style="display:  none;">
             <div class="login-box">
                 <h2>Login</h2>
                 <form action="#" method="post">
@@ -56,9 +56,9 @@
                         </a>
                     </div>
 
-                    <button id="btnInicio" type="submit">Ingresar</button>
+                    <button class="button" id="btnInicio" type="submit">Ingresar</button>
 
-                    <p>¿No tienes una cuenta?<a id="btnRegistrarse" class="a" href="#" >Registrate!</a></p>
+                    <p>¿No tienes una cuenta?<a id="btnRegistrarse" class="a" href="#">Registrate!</a></p>
                 </form>
             </div>
         </div>
@@ -79,10 +79,9 @@
                         </a>
                     </div>
 
-                    <button id="btnRegistroEmail" type="submit">Registrar</button>
+                    <button class="button" id="btnRegistroEmail" type="submit">Registrar</button>
 
-                    <a id="btnIniciarSesion" class="a-log" href="#">Iniciar Sesion!</a></p>
-
+                    <p>¿Ya tienes una cuenta?<a id="btnIniciarSesion" class="a-log" href="#">Iniciar Sesión!</a></p>
                 </form>
             </div>
         </div>

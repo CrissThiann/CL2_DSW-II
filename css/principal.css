@@ -1,4 +1,4 @@
-*{
+/**{
     margin: 0;
     box-sizing: border-box;
     font-family: 'montserrat', sans-serif;
@@ -51,4 +51,4 @@ nav ul li a:hover{
 
 .header-logotipo-user {
     right: 10%;
-}
+}*/
