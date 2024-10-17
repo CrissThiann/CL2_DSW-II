@@ -7,62 +7,84 @@
     <!--Font Google Apis-->
     <link href="https://fonts.googleapis.com/css?family=Allerta|Montserrat" rel="stylesheet">
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!--CSS-->
     <link rel="stylesheet" href="css/style.css">
+    <!--<link rel="stylesheet" href="css/principal.css">-->
     <!--JS-->
     <script type="module" src="config/ConfigFirebase.js" defer></script>
-    <script src="js/general.js"></script>
+    <script src="js/script.js"></script>
 </head>
 <body>
-    <!--Login-->
-    <div id="modalRegister" class="glass-container">
-         <!-- Contenido del formulario de Login -->
-        <div class="login-box">
-            <h2>Login</h2>
-            <form action="#" method="post">
-                <input type="text" id="emailSesion" name="email" required placeholder="Email">
-                <input type="password" id="passwordSesion" name="password" required placeholder="Password">
-
-                <div class="options">
-                    <a id="authGoogle" class="google-button" href="#" style="margin-bottom: 10px;">
-                        <i class="bi bi-google" style="margin-right:5px;"></i>
-                        Continuar con google
-                    </a>
+    <!--Menu-->
+    <div class="nav">
+        <header class="header-menu">
+            <figure class="header-logotipo">
+                <img src="img/logotipo.png" alt="logotipo" width="100px" style="margin-top:5px;">
+                <div class="modalLogin">
+                    <a id="btnInicioSesion" class="inicioSesion">Iniciar Sesión</a>
                 </div>
-
-                <button id="btnInicio" type="submit">Ingresar</button>
-
-                <p>¿No tienes una cuenta?<a id="btnRegistrarse" class="a" href="#" >Registrate!</a></p>
-
-            </form>
-        </div>
+            </figure>
+            
+            <nav class="nav header-menu-nav">
+                <ul class="header-menu-nav-ul">
+                    <li class="header-menu-nav-ul-li"><a href="#">Insertar Datos</a></li>
+                    <li class="header-menu-nav-ul-li"><a href="#">Consultar Datos</a></li>
+                    <li class="header-menu-nav-ul-li"><a href="#">Eliminar Documentos</a></li>
+                </ul>
+            </nav>
+            <figure class="header-logotipo-user">
+                <img id="Avatar" src="img/hombre-avatar.png" alt="Avatar" width="100px" style="margin-bottom:25px;">
+            </figure>
+        </header>
     </div>
+    <!-- Contenedor principal para centrar el contenido -->
+    <div class="main-content">
+        <!--Login-->
+        <div id="modalRegister" class="glass-container">
+            <div class="login-box">
+                <h2>Login</h2>
+                <form action="#" method="post">
+                    <input type="text" id="emailSession" name="email" required placeholder="Email">
+                    <input type="password" id="passwordSession" name="password" required placeholder="Password">
 
-    <!--Create Account-->
-    <div class="glass-container-create">
-        <!-- Contenido del formulario de Crear Cuenta -->
-        <div class="login-box">
-            <h2>Crear Cuenta</h2>
-            <form action="#" method="post">
-                <input type="text" id="nombre" name="nombre" required placeholder="Name">
-                <input type="text" id="usernameCreat" name="username" required placeholder="Email">
-                <input type="password" id="passwordCreat" name="password" required placeholder="Password">
+                    <div class="options">
+                        <a id="authGoogle" class="google-button" href="#" style="margin-bottom: 10px;">
+                            <i class="bi bi-google" style="margin-right:5px;"></i>
+                            Continuar con google
+                        </a>
+                    </div>
 
-                <div class="options">
-                    <a id="authGoogle" class="google-button" href="#" style="margin-bottom: 10px;">
-                        <i class="bi bi-google" style="margin-right:5px;"></i>
-                        Continuar con google
-                    </a>
-                </div>
+                    <button id="btnInicio" type="submit">Ingresar</button>
 
-                <button id="btnRegistroEmail" type="submit">Registrar</button>
+                    <p>¿No tienes una cuenta?<a id="btnRegistrarse" class="a" href="#" >Registrate!</a></p>
+                </form>
+            </div>
+        </div>
+        <!--Create Account-->
+        <div id="modalCreate" class="glass-container-create">
+            <!-- Contenido del formulario de Crear Cuenta -->
+            <div class="login-box">
+                <h2>Crear Cuenta</h2>
+                <form action="#" method="post">
+                    <input type="text" id="nombreCreate" name="nombre" required placeholder="Name">
+                    <input type="text" id="usernameCreat" name="username" required placeholder="Email">
+                    <input type="password" id="passwordCreat" name="password" required placeholder="Password">
 
-                <a id="btnIniciarSesion" class="a-log" href="#">Iniciar Sesion!</a></p>
+                    <div class="options">
+                        <a id="authGoogle" class="google-button" href="#" style="margin-bottom: 10px;">
+                            <i class="bi bi-google" style="margin-right:5px;"></i>
+                            Continuar con google
+                        </a>
+                    </div>
 
-            </form>
+                    <button id="btnRegistroEmail" type="submit">Registrar</button>
+
+                    <a id="btnIniciarSesion" class="a-log" href="#">Iniciar Sesion!</a></p>
+
+                </form>
+            </div>
         </div>
     </div>
     
@@ -80,5 +102,10 @@
 
 
 <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script> 
-<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-storage.js"></script> 
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-storage.js"></script>
+
+<!--build:js js/main.min.js-->
+<script type="text/javascript" src="config/ConfigFirebase.js"></script>
+<script type="text/javascript" src="js/general.js"></script>
+<script type="text/javascript" src="js/auth/authentication.js"></script>
 </html>
