@@ -19,30 +19,39 @@
 <body>
     <!--Menu-->
     <div class="nav">
-        <header class="header-menu">
-            <figure class="header-logotipo">
-                <img src="img/logotipo.png" alt="logotipo" width="100px" style="margin-top:5px;">
-                <div class="modalLogin">
-                    <a id="btnInicioSesion" class="inicioSesion" href="#">Iniciar Sesión</a>
-                </div>
-            </figure>
-            
-            <nav class="nav header-menu-nav">
-                <ul class="header-menu-nav-ul">
-                    <li class="header-menu-nav-ul-li"><a href="#">Insertar Datos</a></li>
-                    <li class="header-menu-nav-ul-li"><a href="#">Consultar Datos</a></li>
-                    <li class="header-menu-nav-ul-li"><a href="#">Eliminar Documentos</a></li>
-                </ul>
-            </nav>
-            <figure class="header-logotipo-user">
-                <img id="Avatar" src="img/hombre-avatar.png" alt="Avatar" width="100px" style="margin-bottom:25px;">
-            </figure>
-        </header>
+            <header class="header-menu">
+                <figure class="header-logotipo">
+                    <img src="img/logotipo.png" alt="logotipo" width="100px" style="margin-top:5px;">
+                    <div class="modalLogin">
+                        <a id="btnInicioSesion" class="inicioSesion" href="#">Iniciar Sesión</a>
+                    </div>
+                </figure>
+                
+                <nav class="nav header-menu-nav">
+                    <ul class="header-menu-nav-ul">
+                        <li class="header-menu-nav-ul-li"><a id="btnTodoPost">Todos los Posts</a></li>
+                        <li class="header-menu-nav-ul-li"><a id="btnMisPost">Mis Posts</a></li>
+                        <li class="header-menu-nav-ul-li"><a id="btnModalPost">Realiza un Post</a></li>
+                    </ul>
+                </nav>
+                <figure class="header-logotipo-user">
+                    <img id="avatar" src="img/hombre-avatar.png" alt="Avatar" width="100px" style="margin-bottom:25px;">
+                </figure>
+            </header>
     </div>
+
+
+    <h4 id="tituloPost" class="titulo-posts">Posts de la Comunidad</h4>
+    <section class="posts" id="posts">        
+    </section>
+
+    
+
+    
     <!-- Contenedor principal para centrar el contenido -->
     <div class="main-content">
         <!--Login-->
-        <div id="modalRegister" class="glass-container" style="display:  none;">
+        <div id="modalRegister" class="glass-container" style="display: none;">
             <div class="login-box">
                 <h2>Login</h2>
                 <form action="#" method="post">
@@ -67,7 +76,7 @@
             <!-- Contenido del formulario de Crear Cuenta -->
             <div class="login-box">
                 <h2>Crear Cuenta</h2>
-                <form action="#" method="post">
+                <form action="#" method="post" id="formCreateAccount">
                     <input type="text" id="nombreCreate" name="nombre" required placeholder="Name">
                     <input type="text" id="usernameCreat" name="username" required placeholder="Email">
                     <input type="password" id="passwordCreat" name="password" required placeholder="Password">
@@ -86,6 +95,33 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal Post -->
+    <div id="modalPost" class="glass-container-create-post modal modal-registro" style="display: none;">
+        <div class="login-box">
+            <h2>Realiza un Post</h2>
+                <div class="input-field">
+                    <input id="tituloNewPost" type="text" maxlength="30" data-length="30" required placeholder="Titulo" />
+                </div>
+                <div class="input-field">
+                    <textarea id="descripcionNewPost" type="text"  maxlength="200" data-length="200" class="materialize-textarea" required placeholder="Escribe tu descripcion aquí..."></textarea>
+                </div>
+                <div class="input-field">
+                    <input id="linkVideoNewPost" type="text" required placeholder="Enlace del Video"/>
+                </div>
+                <div class="progress-panel">
+                    <input type="file" value="upload" id="btnUploadFile" placeholder="Imagen"/>
+                    <div class="progress">
+                        <div class="determinate" style="width: 0%"></div>
+                    </div>
+                </div>
+                <div class="div-btnInicioSesion">
+                    <button id="btnRegistroPost" class="button waves-effect waves-light"><i class="bi bi-pencil"></i>Crear Post!</button>
+                </div> 
+        </div>    
+    </div>
+
+    
     
 </body>
 <script src="js/general.js"></script>   

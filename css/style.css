@@ -4,18 +4,9 @@
     font-family: 'montserrat', sans-serif;
 }
 
-/*body{
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-image: url('/img/fondo.jpg');
-    background-size: cover;
-    background-position: center;
-}*/
-
+.transparent-background{
+    backdrop-filter: blur(10px);
+}
 
 
 body {
@@ -27,6 +18,9 @@ body {
     background-size: cover;
     background-position: center;
 }
+
+/********************* Estilos para centrar el modal *************************/
+
 
 .header-menu{
     display: flex;
@@ -54,6 +48,8 @@ body {
     text-decoration: none;
     color: white;
     font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .nav ul li a:hover{
@@ -73,9 +69,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-grow: 1;
-    width: 100%;
+    height: 700px;
+    width: 100vw;
 }
+
 
 .glass-container{
     width: 350px;
@@ -88,6 +85,8 @@ body {
     border: 1px solid #fff;
 }
 
+
+
 .glass-container-create{
     width: 300px;
     height: 400px; 
@@ -95,16 +94,16 @@ body {
     z-index: 1;
     background: rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    border: 1px solid #fff;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
+    border-radius: 10px;
+    border: 1px solid #fff;
 
 }
 
 .glass-container::before{
     content:'';
-    position: absolute;
+    position: relative;
     width: 100%;
     height: 100%;
     border-radius: 10px;
@@ -174,6 +173,7 @@ input:focus{
     transition: all 0.3 ease;
     cursor: pointer;
     border: #fff solid 1px;
+    text-decoration: none;
 }
 
 .inicioSesion{
@@ -181,7 +181,6 @@ input:focus{
     text-transform: uppercase;
     outline: 0;
     color: #fff;
-    /*background: transparent;*/
     display: flex;
     align-items: center;
     justify-content: center;
@@ -195,6 +194,7 @@ input:focus{
     transition: all 0.3 ease;
     cursor: pointer;
     border: #fff solid 1px;
+    text-decoration: none;
 }
 
 .inicioSesion:hover{
@@ -209,6 +209,7 @@ input:focus{
     border: none;
     border-radius: 10px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .button:hover{
@@ -239,4 +240,112 @@ p{
 
 .a-log:hover{
     color: #4F74E0;
+}
+
+/****************ESTILOS DE LOS POST*****************/
+.titulo-posts {
+    color: white;
+    font-size: 30px;
+    font-weight: bolder; 
+    text-align: center;
+    margin-top: 5px;
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+/****************MODAL POST*************************/
+/* Estilos para el modal de creación de posts */
+#modalPost .input-field {
+    margin-bottom: 10px;
+}
+#modalPost{
+    width: 300px;
+    height: 450px;
+}
+
+#modalPost .input-field label {
+    color: #fff;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+#modalPost .input-field input,
+#modalPost .input-field textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 13px;
+}
+
+#modalPost .input-field textarea {
+    resize: none;
+    height: 100px;
+
+}
+
+#modalPost .input-field input::placeholder,
+#modalPost .input-field textarea::placeholder {
+    color: #fff;
+}
+
+#modalPost .input-field input:focus,
+#modalPost .input-field textarea:focus {
+    outline: none;
+}
+
+#modalPost h2 {
+    color: black;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+
+#modalPost .progress-panel input[type="file"] {
+    color: #fff;
+    margin-bottom: 10px;
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+}
+
+#modalPost .progress {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#modalPost .progress .determinate {
+    background: #fff;
+    height: 5px;
+}
+
+#modalPost .button {
+    background: #fff;
+    color: black;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#modalPost .button:hover {
+    background: transparent;
+    color: white;
+    outline: 1px solid #fff;
+}
+
+.glass-container-create-post{
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: 1px solid #fff;
 }
